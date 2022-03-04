@@ -104,7 +104,8 @@ fi
 
 topic "Installing Google Chrome from the $channel channel."
 
-PACKAGES="$PACKAGES https://www.slimjet.com/chrome/download-chrome.php?file=files%2F90.0.4430.72%2Fgoogle-chrome-stable_current_amd64.deb"
+# PACKAGES="$PACKAGES https://www.slimjet.com/chrome/download-chrome.php?file=files%2F90.0.4430.72%2Fgoogle-chrome-stable_current_amd64.deb"
+PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
@@ -124,7 +125,7 @@ for PACKAGE in $PACKAGES; do
     
     if [[ $PACKAGE_NAME == *google-chrome-stable* ]]; then
       topic "I see we're dealing with the google-chrome-stable!!!!!!"
-      PACKAGE_FILE= $APT_CACHE_DIR/archives/google-chrome-stable_current_amd64.deb
+      #PACKAGE_FILE= $APT_CACHE_DIR/archives/google-chrome-stable_current_amd64.deb
     fi
 
     topic "Fetching $PACKAGE"
